@@ -7,20 +7,44 @@ function binarySearch(array, searchTerm) {
 	 ** repeat the above process for the subset of the array
 	 ** keep repeating with smaller and smaller subsets until you find the searchTerm
 	 */
-	let index;
+	
 	let middle = Math.floor(array.length/2);
-	for(let i = 0; i < 25; i++){
-		console.log(middle);
-		if(array[middle] == searchTerm){
-			index = middle;
-			break;
-		}else if(middle > searchTerm){
-			middle = Math.floor(middle/2);
-		}else if(middle < searchTerm){
-			middle = Math.floor(middle/2) + middle;
-		}
-	}
-	return index;
-}
+	console.log("Array: " + array);
+	let isNotRight = [];
+	let isNotLeft  = [];
+	for(let i = 0; i < 10; i++){
+		console.log("Checking: " + middle);
+		if(array.middle == searchTerm){
+			return middle;
+		}else{
+			if(middle > searchTerm){
+				for(let a = middle; a < array.length; a++){
+					isNotRight.push(a);
+				}
+				console.log("Ruled out (R): " + isNotRight);
+				// middle = Math.floor(middle/2);
+				
+			}else if(middle < searchTerm){
+				for(let a = 0; a <= middle; a++){
+					isNotLeft.push(a);
+				}
+				console.log("Ruled out (L): " + isNotLeft);
+				// middle = Math.floor((middle/2) + 2);
 
-module.exports = binarySearch;
+			}
+			if(isNotRight.length == 0 ){
+				
+			}else if(isNotLeft.length == 0){
+
+			}else{
+				middle = isNotRight[0] - isNotLeft[isNotLeft.length] - 1;
+			}
+		}		
+	}
+}
+let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let searchFor = 3;
+let index = binarySearch(arr, searchFor);
+console.log("Index: " + index);
+
+// module.exports = binarySearch;

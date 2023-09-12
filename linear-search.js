@@ -5,14 +5,11 @@ function linearSearch(array, searchTerm) {
 	 **
 	 ** Return the index of the found element
 	 */
-	let index = 0;
 	for (let i = 0; i < array.length; i++) {
 		if(array[i] == searchTerm){
-			index = i;
-			break;
+			return i;
 		}
 	}
-	return index;
 }
 
 module.exports = linearSearch;
