@@ -10,34 +10,34 @@ function binarySearch(array, searchTerm) {
 	
 	let middle = Math.floor(array.length/2);
 	console.log("Array: " + array);
-	let isNotRight = [];
-	let isNotLeft  = [];
+	let isNotRight = -1;
+	let isNotLeft = -1;
 	for(let i = 0; i < 10; i++){
 		console.log("Checking: " + middle);
-		if(array.middle == searchTerm){
+		if(middle == searchTerm){
 			return middle;
 		}else{
 			if(middle > searchTerm){
-				for(let a = middle; a < array.length; a++){
-					isNotRight.push(a);
+				if(isNotRight == -1 || middle < isNotRight){
+					isNotRight = middle;
+					console.log("R: " + middle);
 				}
 				console.log("Ruled out (R): " + isNotRight);
-				// middle = Math.floor(middle/2);
 				
 			}else if(middle < searchTerm){
-				for(let a = 0; a <= middle; a++){
-					isNotLeft.push(a);
+					if(isNotLeft == -1 || middle > isNotLeft){
+						isNotLeft = middle;
+						console.log("L: " + middle);
 				}
 				console.log("Ruled out (L): " + isNotLeft);
-				// middle = Math.floor((middle/2) + 2);
 
 			}
-			if(isNotRight.length == 0 ){
-				
-			}else if(isNotLeft.length == 0){
-
+			if(isNotRight == -1){
+				middle = Math.floor(arr.length/2) + isNotLeft;
+			}else if(isNotLeft == -1){
+				middle = Math.floor(isNotRight/2);
 			}else{
-				middle = isNotRight[0] - isNotLeft[isNotLeft.length] - 1;
+				middle = Math.floor(((isNotRight - isNotLeft) - 1)/2) + isNotLeft;
 			}
 		}		
 	}
