@@ -5,6 +5,15 @@ function insertionSort(array) {
 	 ** is bigger
 	 */
 
+	for (let i = array.length; i > 0; i--) {
+		if(array[i] < array[i-1]){
+			let small = array[i];
+			let big = array[i-1];
+			
+		}
+		
+	}
+
 	return array;
 }
 
