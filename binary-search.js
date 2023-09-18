@@ -26,7 +26,7 @@ function binarySearch(array, searchTerm) {
 			}else if(array[middle] < searchTerm){
 					if(isNotLeft == -1 || middle > isNotLeft){
 						isNotLeft = middle;
-						console.log("L: " + middle);
+						// console.log("L: " + middle);
 				}
 				// console.log("Ruled out (L): " + isNotLeft);
 

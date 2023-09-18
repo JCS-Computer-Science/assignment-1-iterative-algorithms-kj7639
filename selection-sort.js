@@ -7,7 +7,32 @@ function selectionSort(array) {
 	 ** Continue like this until you have only one element left.
 	 */
 
+	for(let a = 0; a < array.length; a++){
+		let smallest;
+		let smallestIndex;
+		for(let i = a; i < array.length; i++){
+			if(i == a){
+				smallest = array[i];
+				smallestIndex = i;
+
+			}else if(array[i] < smallest){
+				smallest = array[i];
+				smallestIndex = i;
+
+			}
+		}
+		
+		// console.log("Smallest element: " + smallest + " Index: " + smallestIndex);
+		let swap = array[a];
+		array[a] = smallest;
+		array[smallestIndex] = swap;
+
+	}
 	return array;
 }
+
+// let arr = [3, 6, 1, 9, 14, 3];
+// let sortedArr = selectionSort(arr);
+// console.log("Sorted array: " + sortedArr);
 
 module.exports = selectionSort;
